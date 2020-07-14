@@ -1,12 +1,14 @@
 # PHP-vote
 #使用PHP+MYSQL实现一个简单的投票，具备限制刷票功能：同一个IP地址在限定时间（60秒）内对同一个候选人投票不能超过3次
-
+<?php
+header("content-type:text/html;charset=gb2312");
+print<<<EOT
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!218333-182903-xiehaotian-PHP-exam>
+<!-PHP-exam>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>谢皓天的投票系统（防刷票）</title>
+<title>投票系统（防刷票）</title>
 </head>
 
 <body>
@@ -31,8 +33,7 @@
 </form>
 </body>
 </html>
-<?php 
-header("content-type:text/html;charset=gb2312");
+EOT;
 	if(isset($_POST['button']))   //判断按下按钮
 	{	$xz = $_POST['dxz'];		//获取选择项
 		if(!$xz)					//判断是否为空选
